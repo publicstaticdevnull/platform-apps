@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  echo-server:
+  - apiVersion: v1
+    appVersion: 0.6.0
+    created: "2026-08-15T11:58:08.97914669-03:00"
+    description: Echo-Server for Kubernetes
+    digest: 836539cffc11091b662a0e6146531cb76c3ee3eba4efe64f67145637e45550cf
+    home: https://github.com/Ealenn/Echo-Server
+    icon: https://ealenn.github.io/Echo-Server/assets/images/ping-pong.png
+    keywords:
+    - echo
+    - server
+    - rest
+    - test
+    - api
+    maintainers:
+    - name: Rudy Marchandise
+    name: echo-server
+    sources:
+    - https://github.com/Ealenn/Echo-Server
+    urls:
+    - echo-server-0.5.0.tgz
+    version: 0.5.0
+generated: "2026-08-15T11:58:08.978588814-03:00"
