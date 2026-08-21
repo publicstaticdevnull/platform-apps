@@ -1,4 +1,4 @@
-# platform-gitops
+# platform-apps
 ## What
 This repository is a portfolio showcasing a PoC of my capabilities. For this reason, I do not recommend using it as-is in a production environment. I’m sure there are several areas that could be improved, particularly when it comes to deploying the solution in a cloud environment.
 
@@ -7,19 +7,30 @@ Each folder is mapped to a specific Helm chart, and within that chart, to a spec
 
 For example, if a release published as an artifact contained a bug, it could become a problem.
 
-### Applications
-List of gitops Apps
+## Important
+The applications are managed using an Application CRD on [Argo](https://github.com/publicstaticdevnull/platform-gitops) 
 
-* **[ealenn](https://artifacthub.io/packages/helm/ealenn/echo-server)**: ArgoCD Helm chart setup to deploy continous delivery tool. To install this app:
-```
-cd ealenn
+## Applications
+List of gitops Apps. 
+
+### [ealenn](https://artifacthub.io/packages/helm/ealenn/echo-server)
+First of all. Let's add the ealenn repo. This is, in order, to download the tar.gz. Why download?, because I'm pretending **because of a security requirement, we cannot use external apps**. 
+```bash
 helm repo add ealenn https://ealenn.github.io/charts
 helm search repo ealenn/echo-server
 cd ealenn
-helm pull ealenn/echo-server
-helm repo index .
-helm install echo-server echo-server-0.5.0.tgz \
---create-namespace=true \    
---namespace=platform-apps \ 
+helm pull ealenn/echo-server -d ../
+helm repo index ../
+```
+Now, push the changes and next step, add the **platform-apps** repo as a Helm chart repo. Pretending you are on **ealenn** folder.
+
+```bash
+helm repo add platform-apps https://publicstaticdevnull.github.io/platform-apps
+helm install echo-server platform-apps/echo-server \
+--create-namespace=true \
+--namespace=platform-apps \
 -f values.yml 
 ```
+## To Do
+1. Github actions to check security on Helm charts tar.gz
+2. Github actions to test any change on the helm chart
