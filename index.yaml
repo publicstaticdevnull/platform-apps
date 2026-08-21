@@ -3,7 +3,7 @@ entries:
   echo-server:
   - apiVersion: v1
     appVersion: 0.6.0
-    created: "2026-08-21T09:59:01.538526638-03:00"
+    created: "2026-08-21T13:39:06.153345142-03:00"
     description: Echo-Server for Kubernetes
     digest: 836539cffc11091b662a0e6146531cb76c3ee3eba4efe64f67145637e45550cf
     home: https://github.com/Ealenn/Echo-Server
@@ -22,4 +22,4 @@ entries:
     urls:
     - echo-server-0.5.0.tgz
     version: 0.5.0
-generated: "2026-08-21T09:59:01.538053181-03:00"
+generated: "2026-08-21T13:39:06.152819457-03:00"
