@@ -1,0 +1,14 @@
+global:
+  metrics:
+    enbled: true
+  imagePullSecrets: []
+  defaultStorageClass: ""
+  storageClass: ""
+  security:
+    allowInsecureImages: false
+  postgresql:
+    auth:
+      postgresPassword: "1234"
+      username: "devops"
+      password: "1234"
+      database: "devops"
