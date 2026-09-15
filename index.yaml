@@ -3,7 +3,7 @@ entries:
   echo-server:
   - apiVersion: v1
     appVersion: 0.6.0
-    created: "2026-08-21T13:39:06.153345142-03:00"
+    created: "2026-09-15T12:14:18.001641852-03:00"
     description: Echo-Server for Kubernetes
     digest: 836539cffc11091b662a0e6146531cb76c3ee3eba4efe64f67145637e45550cf
     home: https://github.com/Ealenn/Echo-Server
@@ -22,4 +22,50 @@ entries:
     urls:
     - echo-server-0.5.0.tgz
     version: 0.5.0
-generated: "2026-08-21T13:39:06.152819457-03:00"
+  postgresql:
+  - annotations:
+      fips: "true"
+      images: |
+        - name: os-shell
+          version: "5"
+          image: registry-1.docker.io/bitnami/os-shell:latest
+        - name: postgres-exporter
+          version: 0.20.1
+          image: registry-1.docker.io/bitnami/postgres-exporter:latest
+        - name: postgresql
+          version: 18.6.0
+          image: registry-1.docker.io/bitnami/postgresql:latest
+      licenses: Apache-2.0
+      tanzuCategory: service
+    apiVersion: v2
+    appVersion: 18.6.0
+    created: "2026-09-15T12:14:18.005882483-03:00"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.41.0
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 41214e361bb98acce40737ad4beba5d8294c94f9a19bcac98724aa427f1c5b32
+    home: https://bitnami.com
+    icon: https://dyltqmyl993wv.cloudfront.net/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/postgresql
+    urls:
+    - postgresql-18.11.3.tgz
+    version: 18.11.3
+generated: "2026-09-15T12:14:18.000930084-03:00"
